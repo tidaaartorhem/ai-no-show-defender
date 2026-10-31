@@ -1,0 +1,249 @@
+{
+ "meta": {
+  "source": "Kaggle Medical Appointment No Shows (Joni Hoppen/Aquarela Analytics, 2016)",
+  "corpus_n": 110526,
+  "train_n": 88490,
+  "test_n": 22036,
+  "baseline_logit": -1.3693,
+  "baseline_p": 0.2027,
+  "p99": 0.510176,
+  "model": "additive logit on measured log-odds weights per (lead_time x age_band) cell + scholarship + sms_received + gender + weekday; score = min(100, floor(100*p/p99 + 0.5)); clinic hotspot prior adds +0.35 logit",
+  "segments": {
+   "CRITICAL": ">=85 (call today: confirm/deposit or release slot)",
+   "ELEVATED": "55-84 (SMS confirmation campaign)",
+   "LOW": "<55 (routine reminder)"
+  },
+  "excluded_rows": "1 row with Age=-1",
+  "sunday_note": "no Sunday rows in corpus; Sunday weight defaults to 0",
+  "calibration_holdout": {
+   "CRITICAL": {
+    "observed_rate": 0.3361,
+    "n": 1931,
+    "share": 0.088
+   },
+   "ELEVATED": {
+    "observed_rate": 0.2935,
+    "n": 6156,
+    "share": 0.279
+   },
+   "LOW": {
+    "observed_rate": 0.1379,
+    "n": 13949,
+    "share": 0.633
+   }
+  },
+  "calibration_note": "80/20 deterministic split by AppointmentID hash; weights fit on 80%, observed no-show rates measured on the 20% hold-out."
+ },
+ "features": {
+  "lead_age": {
+   "same_day|60+": {
+    "rate": 0.0546,
+    "n": 6005,
+    "w": -1.4819
+   },
+   "same_day|30-59": {
+    "rate": 0.0573,
+    "n": 13650,
+    "w": -1.4314
+   },
+   "same_day|0-17": {
+    "rate": 0.0868,
+    "n": 9861,
+    "w": -0.984
+   },
+   "1d|60+": {
+    "rate": 0.1879,
+    "n": 1602,
+    "w": -0.0945
+   },
+   "1d|30-59": {
+    "rate": 0.2398,
+    "n": 2435,
+    "w": 0.2157
+   },
+   "same_day|18-29": {
+    "rate": 0.0718,
+    "n": 5401,
+    "w": -1.1895
+   },
+   "1d|18-29": {
+    "rate": 0.3081,
+    "n": 594,
+    "w": 0.5602
+   },
+   "2-3d|18-29": {
+    "rate": 0.2843,
+    "n": 837,
+    "w": 0.4463
+   },
+   "2-3d|0-17": {
+    "rate": 0.2703,
+    "n": 1110,
+    "w": 0.376
+   },
+   "1d|0-17": {
+    "rate": 0.2949,
+    "n": 746,
+    "w": 0.4976
+   },
+   "2-3d|30-59": {
+    "rate": 0.2296,
+    "n": 2805,
+    "w": 0.1587
+   },
+   "15-30d|18-29": {
+    "rate": 0.3913,
+    "n": 2195,
+    "w": 0.9276
+   },
+   "8-14d|0-17": {
+    "rate": 0.3368,
+    "n": 2322,
+    "w": 0.6916
+   },
+   "15-30d|60+": {
+    "rate": 0.2247,
+    "n": 2359,
+    "w": 0.1306
+   },
+   "15-30d|30-59": {
+    "rate": 0.3236,
+    "n": 5455,
+    "w": 0.6318
+   },
+   "8-14d|60+": {
+    "rate": 0.2316,
+    "n": 1451,
+    "w": 0.1698
+   },
+   "8-14d|18-29": {
+    "rate": 0.3756,
+    "n": 1560,
+    "w": 0.8612
+   },
+   "8-14d|30-59": {
+    "rate": 0.3018,
+    "n": 3675,
+    "w": 0.5304
+   },
+   "2-3d|60+": {
+    "rate": 0.1889,
+    "n": 1673,
+    "w": -0.088
+   },
+   "15-30d|0-17": {
+    "rate": 0.35,
+    "n": 3334,
+    "w": 0.7504
+   },
+   "31d+|0-17": {
+    "rate": 0.389,
+    "n": 1879,
+    "w": 0.9179
+   },
+   "31d+|30-59": {
+    "rate": 0.3213,
+    "n": 3206,
+    "w": 0.6214
+   },
+   "31d+|18-29": {
+    "rate": 0.4179,
+    "n": 1041,
+    "w": 1.0378
+   },
+   "31d+|60+": {
+    "rate": 0.2283,
+    "n": 1660,
+    "w": 0.1514
+   },
+   "4-7d|30-59": {
+    "rate": 0.2587,
+    "n": 4910,
+    "w": 0.3163
+   },
+   "4-7d|18-29": {
+    "rate": 0.3421,
+    "n": 1868,
+    "w": 0.7152
+   },
+   "4-7d|0-17": {
+    "rate": 0.28,
+    "n": 2654,
+    "w": 0.4246
+   },
+   "4-7d|60+": {
+    "rate": 0.1994,
+    "n": 2202,
+    "w": -0.021
+   }
+  },
+  "sch": {
+   "n": {
+    "rate": 0.1985,
+    "n": 79796,
+    "w": -0.0266
+   },
+   "y": {
+    "rate": 0.2419,
+    "n": 8694,
+    "w": 0.2269
+   }
+  },
+  "sms": {
+   "n": {
+    "rate": 0.1678,
+    "n": 60005,
+    "w": -0.2322
+   },
+   "y": {
+    "rate": 0.2764,
+    "n": 28485,
+    "w": 0.4069
+   }
+  },
+  "gen": {
+   "F": {
+    "rate": 0.2047,
+    "n": 57570,
+    "w": 0.0121
+   },
+   "M": {
+    "rate": 0.1991,
+    "n": 30920,
+    "w": -0.0227
+   }
+  },
+  "dow": {
+   "Fri": {
+    "rate": 0.2152,
+    "n": 15332,
+    "w": 0.0753
+   },
+   "Tue": {
+    "rate": 0.2009,
+    "n": 20525,
+    "w": -0.0112
+   },
+   "Mon": {
+    "rate": 0.2051,
+    "n": 18151,
+    "w": 0.0146
+   },
+   "Wed": {
+    "rate": 0.1972,
+    "n": 20642,
+    "w": -0.0345
+   },
+   "Thu": {
+    "rate": 0.1967,
+    "n": 13809,
+    "w": -0.0379
+   },
+   "Sat": {
+    "rate": 0.2258,
+    "n": 31,
+    "w": 0.1371
+   }
+  }
+ }
+}

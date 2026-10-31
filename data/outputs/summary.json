@@ -1,0 +1,14 @@
+{
+ "clinic": "Lakeshore Family Clinic",
+ "week_of": "2026-11-02",
+ "n_appointments": 14,
+ "n_critical": 6,
+ "n_elevated": 1,
+ "n_low": 7,
+ "pct_high_risk": 50.0,
+ "scheduled_revenue": 2815,
+ "expected_noshow_loss": 966.5,
+ "at_risk_revenue": 1460,
+ "actions_pending_human": 14,
+ "actions_sent": 0
+}
