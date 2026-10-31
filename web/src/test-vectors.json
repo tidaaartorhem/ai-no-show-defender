@@ -1,0 +1,353 @@
+{
+ "contract": "Python engine <-> TypeScript mirror scoring agreement; both must return expected.score/segment/prob exactly.",
+ "vectors": [
+  {
+   "label": "critical_long_lead_young_hotspot",
+   "appointment": {
+    "patient": "V1",
+    "visit_type": "Procedure",
+    "fee": 310,
+    "scheduled_day": "2026-09-20",
+    "appointment_day": "2026-11-04",
+    "appointment_time": "10:00",
+    "age": 23,
+    "gender": "M",
+    "scholarship": true,
+    "sms_received": true,
+    "neighbourhood": "Harbourfront",
+    "hotspot": true
+   },
+   "expected": {
+    "score": 100,
+    "segment": "CRITICAL",
+    "prob": 0.6445,
+    "features": {
+     "lead_age": "31d+|18-29",
+     "sch": "y",
+     "sms": "y",
+     "gen": "M",
+     "dow": "Wed"
+    }
+   }
+  },
+  {
+   "label": "elevated_mid",
+   "appointment": {
+    "patient": "V2",
+    "visit_type": "Follow-up",
+    "fee": 95,
+    "scheduled_day": "2026-10-25",
+    "appointment_day": "2026-11-04",
+    "appointment_time": "11:00",
+    "age": 33,
+    "gender": "F",
+    "scholarship": false,
+    "sms_received": true,
+    "neighbourhood": "Fort York",
+    "hotspot": false
+   },
+   "expected": {
+    "score": 75,
+    "segment": "ELEVATED",
+    "prob": 0.382,
+    "features": {
+     "lead_age": "8-14d|30-59",
+     "sch": "n",
+     "sms": "y",
+     "gen": "F",
+     "dow": "Wed"
+    }
+   }
+  },
+  {
+   "label": "low_same_day_senior",
+   "appointment": {
+    "patient": "V3",
+    "visit_type": "Follow-up",
+    "fee": 95,
+    "scheduled_day": "2026-11-04",
+    "appointment_day": "2026-11-04",
+    "appointment_time": "15:00",
+    "age": 68,
+    "gender": "F",
+    "scholarship": false,
+    "sms_received": false,
+    "neighbourhood": "Liberty Village",
+    "hotspot": false
+   },
+   "expected": {
+    "score": 8,
+    "segment": "LOW",
+    "prob": 0.0418,
+    "features": {
+     "lead_age": "same_day|60+",
+     "sch": "n",
+     "sms": "n",
+     "gen": "F",
+     "dow": "Wed"
+    }
+   }
+  },
+  {
+   "label": "low_same_day_child",
+   "appointment": {
+    "patient": "V4",
+    "visit_type": "Screening",
+    "fee": 120,
+    "scheduled_day": "2026-11-03",
+    "appointment_day": "2026-11-03",
+    "appointment_time": "09:00",
+    "age": 8,
+    "gender": "M",
+    "scholarship": false,
+    "sms_received": false,
+    "neighbourhood": "CityPlace",
+    "hotspot": false
+   },
+   "expected": {
+    "score": 13,
+    "segment": "LOW",
+    "prob": 0.0662,
+    "features": {
+     "lead_age": "same_day|0-17",
+     "sch": "n",
+     "sms": "n",
+     "gen": "M",
+     "dow": "Tue"
+    }
+   }
+  },
+  {
+   "label": "elevated_scholarship_sms",
+   "appointment": {
+    "patient": "V5",
+    "visit_type": "New patient intake",
+    "fee": 140,
+    "scheduled_day": "2026-10-15",
+    "appointment_day": "2026-11-05",
+    "appointment_time": "13:00",
+    "age": 41,
+    "gender": "F",
+    "scholarship": true,
+    "sms_received": true,
+    "neighbourhood": "Queen West",
+    "hotspot": false
+   },
+   "expected": {
+    "score": 92,
+    "segment": "CRITICAL",
+    "prob": 0.4677,
+    "features": {
+     "lead_age": "15-30d|30-59",
+     "sch": "y",
+     "sms": "y",
+     "gen": "F",
+     "dow": "Thu"
+    }
+   }
+  },
+  {
+   "label": "boundary_lead_31d",
+   "appointment": {
+    "patient": "V6",
+    "visit_type": "Specialist consult",
+    "fee": 220,
+    "scheduled_day": "2026-10-04",
+    "appointment_day": "2026-11-04",
+    "appointment_time": "10:30",
+    "age": 55,
+    "gender": "M",
+    "scholarship": false,
+    "sms_received": false,
+    "neighbourhood": "Distillery District",
+    "hotspot": false
+   },
+   "expected": {
+    "score": 50,
+    "segment": "LOW",
+    "prob": 0.2566,
+    "features": {
+     "lead_age": "31d+|30-59",
+     "sch": "n",
+     "sms": "n",
+     "gen": "M",
+     "dow": "Wed"
+    }
+   }
+  },
+  {
+   "label": "hotspot_on_vs_off",
+   "appointment": {
+    "patient": "V7",
+    "visit_type": "Procedure",
+    "fee": 310,
+    "scheduled_day": "2026-10-20",
+    "appointment_day": "2026-11-05",
+    "appointment_time": "14:30",
+    "age": 29,
+    "gender": "F",
+    "scholarship": false,
+    "sms_received": true,
+    "neighbourhood": "Harbourfront",
+    "hotspot": true
+   },
+   "expected": {
+    "score": 100,
+    "segment": "CRITICAL",
+    "prob": 0.5653,
+    "features": {
+     "lead_age": "15-30d|18-29",
+     "sch": "n",
+     "sms": "y",
+     "gen": "F",
+     "dow": "Thu"
+    }
+   }
+  },
+  {
+   "label": "sunday_defaults_zero",
+   "appointment": {
+    "patient": "V8",
+    "visit_type": "Follow-up",
+    "fee": 95,
+    "scheduled_day": "2026-10-30",
+    "appointment_day": "2026-11-01",
+    "appointment_time": "10:00",
+    "age": 47,
+    "gender": "F",
+    "scholarship": false,
+    "sms_received": false,
+    "neighbourhood": "Liberty Village",
+    "hotspot": false
+   },
+   "expected": {
+    "score": 37,
+    "segment": "LOW",
+    "prob": 0.1889,
+    "features": {
+     "lead_age": "2-3d|30-59",
+     "sch": "n",
+     "sms": "n",
+     "gen": "F",
+     "dow": "Sun"
+    }
+   }
+  },
+  {
+   "label": "age_zero_band",
+   "appointment": {
+    "patient": "V9",
+    "visit_type": "Screening",
+    "fee": 120,
+    "scheduled_day": "2026-11-02",
+    "appointment_day": "2026-11-03",
+    "appointment_time": "09:30",
+    "age": 0,
+    "gender": "M",
+    "scholarship": false,
+    "sms_received": false,
+    "neighbourhood": "CityPlace",
+    "hotspot": false
+   },
+   "expected": {
+    "score": 47,
+    "segment": "LOW",
+    "prob": 0.2379,
+    "features": {
+     "lead_age": "1d|0-17",
+     "sch": "n",
+     "sms": "n",
+     "gen": "M",
+     "dow": "Tue"
+    }
+   }
+  },
+  {
+   "label": "unknown_neighbourhood",
+   "appointment": {
+    "patient": "V10",
+    "visit_type": "Follow-up",
+    "fee": 95,
+    "scheduled_day": "2026-10-28",
+    "appointment_day": "2026-11-06",
+    "appointment_time": "16:30",
+    "age": 62,
+    "gender": "M",
+    "scholarship": false,
+    "sms_received": true,
+    "neighbourhood": "Somewhere Else",
+    "hotspot": false
+   },
+   "expected": {
+    "score": 62,
+    "segment": "ELEVATED",
+    "prob": 0.3172,
+    "features": {
+     "lead_age": "8-14d|60+",
+     "sch": "n",
+     "sms": "y",
+     "gen": "M",
+     "dow": "Fri"
+    }
+   }
+  },
+  {
+   "label": "one_day_lead",
+   "appointment": {
+    "patient": "V11",
+    "visit_type": "Specialist consult",
+    "fee": 220,
+    "scheduled_day": "2026-11-04",
+    "appointment_day": "2026-11-05",
+    "appointment_time": "08:30",
+    "age": 26,
+    "gender": "F",
+    "scholarship": false,
+    "sms_received": false,
+    "neighbourhood": "Fort York",
+    "hotspot": false
+   },
+   "expected": {
+    "score": 49,
+    "segment": "LOW",
+    "prob": 0.2509,
+    "features": {
+     "lead_age": "1d|18-29",
+     "sch": "n",
+     "sms": "n",
+     "gen": "F",
+     "dow": "Thu"
+    }
+   }
+  },
+  {
+   "label": "friday_long_lead",
+   "appointment": {
+    "patient": "V12",
+    "visit_type": "Minor procedure",
+    "fee": 420,
+    "scheduled_day": "2026-09-25",
+    "appointment_day": "2026-11-06",
+    "appointment_time": "08:00",
+    "age": 37,
+    "gender": "M",
+    "scholarship": true,
+    "sms_received": true,
+    "neighbourhood": "Harbourfront",
+    "hotspot": true
+   },
+   "expected": {
+    "score": 100,
+    "segment": "CRITICAL",
+    "prob": 0.5716,
+    "features": {
+     "lead_age": "31d+|30-59",
+     "sch": "y",
+     "sms": "y",
+     "gen": "M",
+     "dow": "Fri"
+    }
+   }
+  }
+ ]
+}

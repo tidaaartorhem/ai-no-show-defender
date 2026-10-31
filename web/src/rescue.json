@@ -1,0 +1,330 @@
+[
+ {
+  "patient": "Daniel Okafor",
+  "visit_type": "Specialist consult",
+  "appointment_day": "2026-11-02",
+  "appointment_time": "09:30",
+  "fee": 220,
+  "score": 100,
+  "prob": 0.5697,
+  "segment": "CRITICAL",
+  "explanation": [
+   "booking lead time x age (15-30d|18-29): +0.93 logit",
+   "already got an automated SMS (y): +0.41 logit",
+   "clinic catchment hotspot (Harbourfront): +0.35 logit",
+   "gender (M): -0.02 logit",
+   "subsidized-care flag (n): -0.03 logit"
+  ],
+  "draft": {
+   "channel": "PHONE CALL",
+   "title": "Call Daniel Okafor today",
+   "script": "Hi Daniel Okafor, this is Lakeshore Family Clinic confirming your Specialist consult on 2026-11-02 at 09:30. We need a quick confirmation today so we can hold your slot. If we can't reach you, we may release the slot to the waitlist.",
+   "cta": "Confirm / take deposit / release slot to waitlist",
+   "status": "pending_human"
+  }
+ },
+ {
+  "patient": "Marcus Chen",
+  "visit_type": "Procedure",
+  "appointment_day": "2026-11-03",
+  "appointment_time": "11:00",
+  "fee": 310,
+  "score": 100,
+  "prob": 0.5503,
+  "segment": "CRITICAL",
+  "explanation": [
+   "booking lead time x age (31d+|30-59): +0.62 logit",
+   "already got an automated SMS (y): +0.41 logit",
+   "clinic catchment hotspot (Harbourfront): +0.35 logit",
+   "subsidized-care flag (y): +0.23 logit",
+   "gender (M): -0.02 logit"
+  ],
+  "draft": {
+   "channel": "PHONE CALL",
+   "title": "Call Marcus Chen today",
+   "script": "Hi Marcus Chen, this is Lakeshore Family Clinic confirming your Procedure on 2026-11-03 at 11:00. We need a quick confirmation today so we can hold your slot. If we can't reach you, we may release the slot to the waitlist.",
+   "cta": "Confirm / take deposit / release slot to waitlist",
+   "status": "pending_human"
+  }
+ },
+ {
+  "patient": "James Adeyemi",
+  "visit_type": "New patient intake",
+  "appointment_day": "2026-11-04",
+  "appointment_time": "09:00",
+  "fee": 140,
+  "score": 100,
+  "prob": 0.5337,
+  "segment": "CRITICAL",
+  "explanation": [
+   "booking lead time x age (15-30d|18-29): +0.93 logit",
+   "already got an automated SMS (y): +0.41 logit",
+   "subsidized-care flag (y): +0.23 logit",
+   "gender (M): -0.02 logit",
+   "day of week (Wed): -0.03 logit"
+  ],
+  "draft": {
+   "channel": "PHONE CALL",
+   "title": "Call James Adeyemi today",
+   "script": "Hi James Adeyemi, this is Lakeshore Family Clinic confirming your New patient intake on 2026-11-04 at 09:00. We need a quick confirmation today so we can hold your slot. If we can't reach you, we may release the slot to the waitlist.",
+   "cta": "Confirm / take deposit / release slot to waitlist",
+   "status": "pending_human"
+  }
+ },
+ {
+  "patient": "Liam Tremblay",
+  "visit_type": "Procedure",
+  "appointment_day": "2026-11-05",
+  "appointment_time": "14:00",
+  "fee": 310,
+  "score": 100,
+  "prob": 0.5568,
+  "segment": "CRITICAL",
+  "explanation": [
+   "booking lead time x age (15-30d|18-29): +0.93 logit",
+   "already got an automated SMS (y): +0.41 logit",
+   "clinic catchment hotspot (Harbourfront): +0.35 logit",
+   "gender (M): -0.02 logit",
+   "subsidized-care flag (n): -0.03 logit",
+   "day of week (Thu): -0.04 logit"
+  ],
+  "draft": {
+   "channel": "PHONE CALL",
+   "title": "Call Liam Tremblay today",
+   "script": "Hi Liam Tremblay, this is Lakeshore Family Clinic confirming your Procedure on 2026-11-05 at 14:00. We need a quick confirmation today so we can hold your slot. If we can't reach you, we may release the slot to the waitlist.",
+   "cta": "Confirm / take deposit / release slot to waitlist",
+   "status": "pending_human"
+  }
+ },
+ {
+  "patient": "Olivia Dubois",
+  "visit_type": "Screening",
+  "appointment_day": "2026-11-06",
+  "appointment_time": "10:00",
+  "fee": 120,
+  "score": 100,
+  "prob": 0.6769,
+  "segment": "CRITICAL",
+  "explanation": [
+   "booking lead time x age (31d+|18-29): +1.04 logit",
+   "already got an automated SMS (y): +0.41 logit",
+   "clinic catchment hotspot (Harbourfront): +0.35 logit",
+   "subsidized-care flag (y): +0.23 logit",
+   "day of week (Fri): +0.08 logit"
+  ],
+  "draft": {
+   "channel": "PHONE CALL",
+   "title": "Call Olivia Dubois today",
+   "script": "Hi Olivia Dubois, this is Lakeshore Family Clinic confirming your Screening on 2026-11-06 at 10:00. We need a quick confirmation today so we can hold your slot. If we can't reach you, we may release the slot to the waitlist.",
+   "cta": "Confirm / take deposit / release slot to waitlist",
+   "status": "pending_human"
+  }
+ },
+ {
+  "patient": "Mia Fontaine",
+  "visit_type": "Specialist consult",
+  "appointment_day": "2026-11-06",
+  "appointment_time": "13:15",
+  "fee": 220,
+  "score": 91,
+  "prob": 0.4623,
+  "segment": "CRITICAL",
+  "explanation": [
+   "booking lead time x age (15-30d|0-17): +0.75 logit",
+   "already got an automated SMS (y): +0.41 logit",
+   "day of week (Fri): +0.08 logit",
+   "subsidized-care flag (n): -0.03 logit"
+  ],
+  "draft": {
+   "channel": "PHONE CALL",
+   "title": "Call Mia Fontaine today",
+   "script": "Hi Mia Fontaine, this is Lakeshore Family Clinic confirming your Specialist consult on 2026-11-06 at 13:15. We need a quick confirmation today so we can hold your slot. If we can't reach you, we may release the slot to the waitlist.",
+   "cta": "Confirm / take deposit / release slot to waitlist",
+   "status": "pending_human"
+  }
+ },
+ {
+  "patient": "Ava Mensah",
+  "visit_type": "New patient intake",
+  "appointment_day": "2026-11-04",
+  "appointment_time": "11:30",
+  "fee": 140,
+  "score": 75,
+  "prob": 0.382,
+  "segment": "ELEVATED",
+  "explanation": [
+   "booking lead time x age (8-14d|30-59): +0.53 logit",
+   "already got an automated SMS (y): +0.41 logit",
+   "subsidized-care flag (n): -0.03 logit",
+   "day of week (Wed): -0.03 logit"
+  ],
+  "draft": {
+   "channel": "SMS",
+   "title": "Confirmation SMS for Ava Mensah",
+   "script": "Lakeshore Family Clinic: Hi Ava Mensah, please reply YES to confirm your New patient intake on 2026-11-04 at 11:30, or call us to reschedule. Thank you!",
+   "cta": "Approve to queue in SMS batch",
+   "status": "pending_human"
+  }
+ },
+ {
+  "patient": "Sofia Rossi",
+  "visit_type": "Screening",
+  "appointment_day": "2026-11-03",
+  "appointment_time": "13:45",
+  "fee": 120,
+  "score": 38,
+  "prob": 0.196,
+  "segment": "LOW",
+  "explanation": [
+   "booking lead time x age (1d|30-59): +0.22 logit",
+   "subsidized-care flag (n): -0.03 logit",
+   "already got an automated SMS (n): -0.23 logit"
+  ],
+  "draft": {
+   "channel": "ROUTINE",
+   "title": "Standard reminder for Sofia Rossi",
+   "script": "Reminder: Screening on 2026-11-03 at 13:45. Reply to reschedule.",
+   "cta": "Include in routine reminder run",
+   "status": "pending_human"
+  }
+ },
+ {
+  "patient": "Emma Kowalski",
+  "visit_type": "Follow-up",
+  "appointment_day": "2026-11-04",
+  "appointment_time": "10:30",
+  "fee": 95,
+  "score": 38,
+  "prob": 0.1924,
+  "segment": "LOW",
+  "explanation": [
+   "booking lead time x age (1d|30-59): +0.22 logit",
+   "subsidized-care flag (n): -0.03 logit",
+   "day of week (Wed): -0.03 logit",
+   "already got an automated SMS (n): -0.23 logit"
+  ],
+  "draft": {
+   "channel": "ROUTINE",
+   "title": "Standard reminder for Emma Kowalski",
+   "script": "Reminder: Follow-up on 2026-11-04 at 10:30. Reply to reschedule.",
+   "cta": "Include in routine reminder run",
+   "status": "pending_human"
+  }
+ },
+ {
+  "patient": "Aisha Khan",
+  "visit_type": "Specialist consult",
+  "appointment_day": "2026-11-05",
+  "appointment_time": "15:30",
+  "fee": 220,
+  "score": 38,
+  "prob": 0.1918,
+  "segment": "LOW",
+  "explanation": [
+   "booking lead time x age (1d|30-59): +0.22 logit",
+   "subsidized-care flag (n): -0.03 logit",
+   "day of week (Thu): -0.04 logit",
+   "already got an automated SMS (n): -0.23 logit"
+  ],
+  "draft": {
+   "channel": "ROUTINE",
+   "title": "Standard reminder for Aisha Khan",
+   "script": "Reminder: Specialist consult on 2026-11-05 at 15:30. Reply to reschedule.",
+   "cta": "Include in routine reminder run",
+   "status": "pending_human"
+  }
+ },
+ {
+  "patient": "Noah Patel",
+  "visit_type": "Minor procedure",
+  "appointment_day": "2026-11-06",
+  "appointment_time": "08:30",
+  "fee": 420,
+  "score": 33,
+  "prob": 0.1685,
+  "segment": "LOW",
+  "explanation": [
+   "day of week (Fri): +0.08 logit",
+   "booking lead time x age (4-7d|60+): -0.02 logit",
+   "gender (M): -0.02 logit",
+   "subsidized-care flag (n): -0.03 logit",
+   "already got an automated SMS (n): -0.23 logit"
+  ],
+  "draft": {
+   "channel": "ROUTINE",
+   "title": "Standard reminder for Noah Patel",
+   "script": "Reminder: Minor procedure on 2026-11-06 at 08:30. Reply to reschedule.",
+   "cta": "Include in routine reminder run",
+   "status": "pending_human"
+  }
+ },
+ {
+  "patient": "Priya Nair",
+  "visit_type": "Follow-up",
+  "appointment_day": "2026-11-02",
+  "appointment_time": "10:15",
+  "fee": 95,
+  "score": 30,
+  "prob": 0.155,
+  "segment": "LOW",
+  "explanation": [
+   "subsidized-care flag (n): -0.03 logit",
+   "booking lead time x age (1d|60+): -0.09 logit",
+   "already got an automated SMS (n): -0.23 logit"
+  ],
+  "draft": {
+   "channel": "ROUTINE",
+   "title": "Standard reminder for Priya Nair",
+   "script": "Reminder: Follow-up on 2026-11-02 at 10:15. Reply to reschedule.",
+   "cta": "Include in routine reminder run",
+   "status": "pending_human"
+  }
+ },
+ {
+  "patient": "Ethan Wright",
+  "visit_type": "Follow-up",
+  "appointment_day": "2026-11-02",
+  "appointment_time": "16:00",
+  "fee": 95,
+  "score": 9,
+  "prob": 0.0445,
+  "segment": "LOW",
+  "explanation": [
+   "gender (M): -0.02 logit",
+   "subsidized-care flag (n): -0.03 logit",
+   "already got an automated SMS (n): -0.23 logit",
+   "booking lead time x age (same_day|30-59): -1.43 logit"
+  ],
+  "draft": {
+   "channel": "ROUTINE",
+   "title": "Standard reminder for Ethan Wright",
+   "script": "Reminder: Follow-up on 2026-11-02 at 16:00. Reply to reschedule.",
+   "cta": "Include in routine reminder run",
+   "status": "pending_human"
+  }
+ },
+ {
+  "patient": "Lucas Silva",
+  "visit_type": "Procedure",
+  "appointment_day": "2026-11-05",
+  "appointment_time": "09:45",
+  "fee": 310,
+  "score": 8,
+  "prob": 0.0423,
+  "segment": "LOW",
+  "explanation": [
+   "gender (M): -0.02 logit",
+   "subsidized-care flag (n): -0.03 logit",
+   "day of week (Thu): -0.04 logit",
+   "already got an automated SMS (n): -0.23 logit",
+   "booking lead time x age (same_day|30-59): -1.43 logit"
+  ],
+  "draft": {
+   "channel": "ROUTINE",
+   "title": "Standard reminder for Lucas Silva",
+   "script": "Reminder: Procedure on 2026-11-05 at 09:45. Reply to reschedule.",
+   "cta": "Include in routine reminder run",
+   "status": "pending_human"
+  }
+ }
+]
