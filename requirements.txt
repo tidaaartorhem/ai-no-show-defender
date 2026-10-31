@@ -1,0 +1,3 @@
+# NoShowShield: LangGraph rescue-desk pipeline + pytest suite.
+langgraph>=0.6
+pytest>=8.0
